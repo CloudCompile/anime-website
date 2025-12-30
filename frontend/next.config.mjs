@@ -1,35 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export', // Enable static export for GitHub Pages
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreBuildErrors: true,
   },
-  async redirects() {
-    return [
-      {
-        source: '/media',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/watch',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/read',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/news/:path',
-        destination: '/news',
-        permanent: true,
-      },
-    ]
-  },
+  // Note: redirects() is not supported with static export
+  // Redirects will need to be handled client-side or via GitHub Pages configuration
   images: {
     unoptimized: true, // set to TRUE due to vercel limit of image optimization
     remotePatterns: [
