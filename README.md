@@ -50,6 +50,44 @@ If the Vercel one is blocked by payment, try this one (it takes up to 2 minutes 
 > [!IMPORTANT]  
 > You NEED to make some configurations to use the project properly. Give a look on the [How Can i Run It Section](#computer-how-can-i-run-it) then use the info you got there on Vercel or any other platform `Enviroment Variables Section`.
 
+### GitHub Pages
+
+This project is now configured to deploy to GitHub Pages automatically!
+
+1. **Enable GitHub Pages**:
+   - Go to your repository Settings → Pages
+   - Under "Build and deployment", select "GitHub Actions" as the source
+
+2. **Configure Secrets**:
+   - Go to Settings → Secrets and variables → Actions
+   - Add the following repository secrets:
+     - `NEXT_PUBLIC_BACKEND_URL` (URL to your separately hosted backend server)
+     - `NEXT_PUBLIC_ANILIST_CLIENT_ID`
+     - `ANILIST_CLIENT_SECRET`
+     - `NEXT_PUBLIC_WEBSITE_ORIGIN_URL` (your GitHub Pages URL, e.g., `https://yourusername.github.io/anime-website`)
+     - `NEXT_PUBLIC_FIREBASE_API_KEY`
+     - `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+     - `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+     - `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+     - `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER`
+     - `NEXT_PUBLIC_FIREBASE_APP_ID`
+     - `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID`
+     - `NEXT_PUBLIC_FIREBASE_DATABASE_URL`
+     - `NEXT_PUBLIC_MEASUREMENT_ID` (optional, for Google Analytics)
+     - `NEXT_PUBLIC_ANIWATCH_API_URL`
+     - `NEXT_PUBLIC_CONSUMET_API_URL`
+
+3. **Deploy the Backend Separately**:
+   - GitHub Pages only hosts static content, so you'll need to deploy the backend server separately
+   - You can use Vercel, Render, Heroku, or any Node.js hosting service
+   - See the [backend README](/backend) for deployment instructions
+
+4. **Push to Main Branch**:
+   - Once configured, push to the `main` branch to trigger automatic deployment
+   - Your site will be available at `https://yourusername.github.io/repo-name`
+
+### Vercel
+
 On Vercel: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FErickLimaS%2Fanime-website&env=NEXT_PUBLIC_ANIWATCH_API_URL,NEXT_PUBLIC_CONSUMET_API_URL&envDescription=First%2C%20click%20on%20%22Learn%20More%22%20to%20ensure%20all%20variables%20is%20correct%20and%20setted.%20To%20watch%2C%20you'll%20need%20to%20deploy%20the%20Consumet%20and%20Aniwatch%20API.%20To%20the%20login%20system%2C%20you'll%20need%20to%20setup%20a%20Firebase%20Project%2C%20and%20or%20set%20the%20Dev%20Mode%20on%20Anilist%20to%20use%20their%20login.%20&envLink=https%3A%2F%2Fgithub.com%2FErickLimaS%2Fanime-website%3Ftab%3Dreadme-ov-file%23computer-how-can-i-run-it)
 
 ## :pushpin: Under Development (unordered)
