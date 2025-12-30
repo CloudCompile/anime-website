@@ -104,7 +104,7 @@ The website requires several environment variables to function. You need to add 
 3. Click **Create New Client**
 4. Fill in:
    - **Name**: Your app name
-   - **Redirect URI**: `https://yourusername.github.io/anime-website/api/auth`
+   - **Redirect URI**: `https://yourusername.github.io/your-repo-name/api/auth`
 5. Save and copy the Client ID and Secret
 6. Add these as GitHub secrets
 

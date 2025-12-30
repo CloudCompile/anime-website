@@ -43,8 +43,8 @@ jobs:
       - name: Build with Next.js
         run: npm run build
         env:
-          # Anilist API URL (public, no secret needed)
-          NEXT_PUBLIC_ANILIST_API_URL: https://graphql.anilist.co/
+          # Anilist API URL (public endpoint, typically doesn't change)
+          NEXT_PUBLIC_ANILIST_API_URL: ${{ secrets.NEXT_PUBLIC_ANILIST_API_URL || 'https://graphql.anilist.co/' }}
           # Backend server URL - must be hosted separately (Vercel/Render)
           NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
           # Add your environment variables here as GitHub Secrets
